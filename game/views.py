@@ -91,6 +91,8 @@ def weapon_list(request):
         # [미션] 반복문을 이용해 default_weapons의 key값을 name, value값을 power로 Weapon 객체 생성 (Django ORM)
         # [미션] None을 지우고 작성
         None
+        # 모든 Weapon 객체들을 다시 불러오기
+        weapons = Weapon.objects.all()
 
     context = {
         'weapons': weapons,
