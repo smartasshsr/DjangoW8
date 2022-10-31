@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/page/index.css' %}">
+{% endblock %}
+
+{% block body %}
+  <h1>메인 페이지</h1>
+  
+  <p>오늘의 목표</p>
+  <ol>
+    <li>댓글 기능을 구현해봅시다.</li>
+    <li>STATIC_ROOT에 대해 알아봅시다.</li>
+    <li>404 페이지를 만들어봅시다.</li>
+  </ol>
+
+  <img src="{% static 'images/walnut.jpg' %}" alt="walnut">
+{% endblock %}
