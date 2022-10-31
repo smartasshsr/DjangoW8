@@ -4,6 +4,15 @@
 }
 input {
   font-family: 'GangwonEdu_OTFBoldA';
+  font-size: 1rem;
+}
+input[type=text] {
+  border: 1px solid;
+  border-radius: 3px;
+}
+input[type=number] {
+  border: 1px solid;
+  border-radius: 3px;
 }
 input[type=submit] {
   padding: 5px 10px;
