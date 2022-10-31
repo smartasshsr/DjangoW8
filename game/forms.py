@@ -1,5 +1,5 @@
 from django import forms
-# [미션] models.py의 Weapon 모델 추가로 불러오기
+# [미션] models.py의 Weapon 모델 불러오기
 
 
 # [미션] forms의 ModelForm을 상속받는 WeaponForm 클래스 생성
