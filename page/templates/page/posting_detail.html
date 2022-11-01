@@ -66,8 +66,7 @@
         <tr>
           <td class="posting__comment__content">
             <!-- 댓글 내용 -->
-            <!-- [코드 추가] 줄바꿈 처리를 위하여 linebreaksbr 사용 -->
-            <span class="content__space">{{comment.content}}</span>
+            <span class="content__space">{{comment.content|linebreaksbr}}</span>
           </td>
           <td class="posting__comment__delete" rowspan="2">
             <!-- [코드 추가] POST 방식으로 댓글 삭제 후 action을 이용해 url 이름이 comment_delete인 url로 이동 -->
