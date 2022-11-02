@@ -17,7 +17,7 @@
             <a class="button" href="{% url 'page:posting_update' posting.id %}">수정</a>
             <!-- [코드 추가] onsumbit 속성을 이용해 삭제 버튼을 누르는 경우 확인창이 뜨도록 설정 -->
             <!-- [코드 추가] JavaScript를 이용하여 contentDelete() 함수가 실행될 때, True나 False 반환하도록 설정 -->
-            <form action="" method="post" onsubmit="">
+            <form action="{% url 'page:posting_delete' posting.id %}" method="post" onsubmit="return contentDelete()">
               {% csrf_token %}
               <input class="button" type="submit" value="삭제">
             </form>
@@ -31,7 +31,7 @@
         <td class="posting__detail__content" colspan="2">
           <div class="content">
             <!-- [코드 추가] 줄바꿈 처리를 위하여 linebreaksbr 사용 -->
-            <span class="content__space">{{posting.content}}</span>
+            <span class="content__space">{{posting.content|linebreaksbr}}</span>
           </div>
         </td>
       </tr>
@@ -55,7 +55,7 @@
             {% csrf_token %}
             <div>
               <!-- [코드 작성] Django에서 생성된 comment_form을 div태그 안쪽에 배치 -->
-              
+              {{comment_form.as_div}}
               <input class="button" type="submit" value="작성">
             </div>
           </form>
@@ -70,7 +70,7 @@
           </td>
           <td class="posting__comment__delete" rowspan="2">
             <!-- [코드 추가] POST 방식으로 댓글 삭제 후 action을 이용해 url 이름이 comment_delete인 url로 이동 -->
-            <form action="" method="post" onsubmit="return contentDelete()">
+            <form action="{% url 'page:posting_delete' posting.id %}" method="post" onsubmit="return contentDelete()">
               {% csrf_token %}
               <input type="submit" value="x">
             </form>
@@ -121,5 +121,10 @@
     // [코드 작성] confirm을 이용해 확인창이 뜨도록 만들기 (result 변수에 저장)
     // [코드 작성] 확인창의 '확인' 버튼을 누르면 True, '취소' 버튼을 누르면 False 반환
 
+    function contentDelete()
+    {
+      const result = confirm("삭제하시겠습니까?")
+      return result
+    }
   </script>
 {% endblock %}
