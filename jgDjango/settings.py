@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-# [코드 작성] os 모듈(Operating System) 불러오기
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,10 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-83fajeq(-c#juu+!)3#y2xxjz_yc9x2dc4_^@y^e9q0j3_ck8('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# [코드 수정] 개발 단계에서는 DEBUG를 True, 배포 단계에서는 DEBUG를 False로 설정
 DEBUG = True
 
-# [코드 추가] ALLOWED_HOSTS에 '127.0.0.1'를 추가
 ALLOWED_HOSTS = []
 
 
@@ -123,9 +119,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
-# [코드 추가] 배포 시 프로젝트에서 사용하는 모든 정적 파일을 모아두는 경로를 STATIC_ROOT로 지정 (staticfiles)
-# [코드 추가] os.path.join()을 사용하여 지정
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
